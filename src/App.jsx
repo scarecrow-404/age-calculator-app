@@ -57,16 +57,16 @@ function App() {
 
   return (
     <>
-      <main className="box-border h-screen w-full bg-[#dbdbdb] flex items-center justify-center ">
-        <div className="flex flex-col items-center min-h-[400px] min-w-[350px] bg-white rounded-t-2xl rounded-br-[25%] rounded-bl-2xl gap-4">
+      <main className="box-border h-screen w-full bg-[#dbdbdb] flex items-center justify-center sm:max-2xl:min-w-[800px] ">
+        <div className="flex flex-col items-center min-h-[400px] min-w-[350px] bg-white rounded-t-2xl rounded-br-[25%] rounded-bl-2xl gap-4 sm:max-2xl:min-h-[500px] sm:max-2xl:min-w-[650px]">
           <form onSubmit={(e) => calculateAge(years, months, days, e)}>
-            <div className="flex max-w-[400px] gap-1 mt-[50px]">
+            <div className="flex max-w-[450px] gap-3 mt-[50px] sm:max-2xl:min-w-[500px] sm:max-2xl:gap-8">
               <div className="flex flex-col ">
                 <label className=" text-xl text-[#716F6F] " htmlFor="days">
                   Day
                 </label>
                 <input
-                  className={`w-[100px] text-[32px] border-[1.5px] rounded-md focus:border-[#854DFF] focus:ring-1 focus:ring-[#854DFF] focus:outline-none ${
+                  className={`w-[100px] text-[32px] border-[1.5px] rounded-md focus:border-[#854DFF] focus:ring-1 focus:ring-[#854DFF] focus:outline-none sm:max-2xl:w-[150px] ${
                     isValid ? "" : "border-red-400 placeholder:text-red-400"
                   }`}
                   type="number"
@@ -88,7 +88,7 @@ function App() {
                 </label>
 
                 <input
-                  className={`w-[100px] text-[32px] border-[1.5px] rounded-md focus:border-[#854DFF] focus:ring-1 focus:ring-[#854DFF] focus:outline-none ${
+                  className={`w-[100px] text-[32px] border-[1.5px] rounded-md focus:border-[#854DFF] focus:ring-1 focus:ring-[#854DFF] focus:outline-none sm:max-2xl:w-[150px] ${
                     isValid ? "" : "border-red-400 placeholder:text-red-400"
                   }`}
                   type="number"
@@ -109,7 +109,7 @@ function App() {
                   Year
                 </label>
                 <input
-                  className={`w-[100px] text-[32px] border-[1.5px] rounded-md focus:border-[#854DFF] focus:ring-1 focus:ring-[#854DFF] focus:outline-none ${
+                  className={`w-[100px] text-[32px] border-[1.5px] rounded-md focus:border-[#854DFF] focus:ring-1 focus:ring-[#854DFF] focus:outline-none sm:max-2xl:w-[150px] ${
                     isValid ? "" : "border-red-400 placeholder:text-red-400"
                   }`}
                   type="number"
@@ -126,14 +126,17 @@ function App() {
               </div>
             </div>
             <div className="flex flex-col mx-auto relative justify-center items-center ">
-              <hr className="w-[85%] border-[ hsl(0, 0%, 86%)] border-[1px] absolute z-10" />
-              <button className="active:grayscale z-20" type="submit">
+              <hr className="w-[85%] border-[ hsl(0, 0%, 86%)] border-[1px] absolute z-10 sm:max-2xl:w-[100%]" />
+              <button
+                className="active:grayscale z-20 sm:max-2xl:self-end"
+                type="submit"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="46"
                   height="44"
                   viewBox="0 0 46 44"
-                  className="svg z-20 rounded-full bg-[#854DFF] p-3"
+                  className="svg z-20 rounded-full bg-[#854DFF] p-3 sm:max-2xl:w-[60px] sm:max-2xl:h-[60px]"
                 >
                   <g fill="none" stroke="#FFF" strokeWidth="2">
                     <path d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44" />
@@ -143,15 +146,15 @@ function App() {
             </div>
           </form>
           <div>
-            <div className="flex text-5xl gap-2 bold-italic-poppins">
+            <div className="flex text-5xl gap-2 bold-italic-poppins sm:max-2xl:text-7xl">
               <h1 className="text-[#854DFF]">{result[0]}</h1>
               <h1>Years</h1>
             </div>
-            <div className="flex bold-italic-poppins gap-2 text-5xl">
+            <div className="flex bold-italic-poppins gap-2 text-5xl sm:max-2xl:text-7xl">
               <h1 className="text-[#854DFF]">{result[1]}</h1>
               <h1>months</h1>
             </div>
-            <div className="flex text-5xl gap-2 bold-italic-poppins">
+            <div className="flex text-5xl gap-2 bold-italic-poppins sm:max-2xl:text-7xl">
               <h1 className="text-[#854DFF]">{result[2]}</h1>
               <h1>days</h1>
             </div>
